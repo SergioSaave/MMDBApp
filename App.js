@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler'
+import * as React from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import AppTabs from './screens/AppTabs';
+
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import HerramientasScreen from './screens/HerramientasScreen';
+
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Mi Manual del Bebe">
+        <Drawer.Screen name="Inicio" component={AppTabs}
+          options={{
+            drawerIcon: () => (
+              <MaterialIcons name='child-friendly' size={24} color="#000" />
+            )
+          }} />
+        <Drawer.Screen name="Herramientas" component={HerramientasScreen}
+          options={{
+            drawerIcon: () => (
+              <MaterialIcons name='design-services' size={24} color="#000" />
+            )
+          }} />
+        <Drawer.Screen name="Blogs" component={HerramientasScreen}
+          options={{
+            drawerIcon: () => (
+              <MaterialIcons name='dashboard' size={24} color="#000" />
+            )
+          }} />
+        <Drawer.Screen name="Nosotros" component={HerramientasScreen}
+          options={{
+            drawerIcon: () => (
+              <MaterialIcons name='family-restroom' size={24} color="#000" />
+            )
+          }} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
