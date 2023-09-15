@@ -3,9 +3,9 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import Ionic from 'react-native-vector-icons/Ionicons'
 
 import HomeScreen from './HomeScreen'
-import AboutScreen from './AboutScreen'
 import FaltaScreen from './FaltaScreen';
 import UsuariosScreen from './UsuariosScreen';
+import PostsScreen from './PostsScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -30,7 +30,7 @@ const AppTabs = () => {
             }
         })}>
             <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Posts" component={AboutScreen} />
+            <Tab.Screen name="Posts" component={PostsScreen} />
             <Tab.Screen name="Falta" component={FaltaScreen} />
             <Tab.Screen name="Perfil" component={UsuariosScreen} />
         </Tab.Navigator>
