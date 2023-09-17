@@ -6,9 +6,9 @@ import { blogMamas } from "../assets/data"
 import { FlatList } from "react-native-gesture-handler";
 import PostItem from "../components/PostItem";
 
-const PostList = () => {
+const PostList = ({ navigation }) => {
   const renderItem = ({ item }) => {
-    return <PostItem post={item} />;
+    return <PostItem post={item} navigation={navigation} />;
   };
 
   return (

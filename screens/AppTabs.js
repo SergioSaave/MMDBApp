@@ -6,13 +6,14 @@ import HomeScreen from './HomeScreen'
 import FaltaScreen from './FaltaScreen';
 import UsuariosScreen from './UsuariosScreen';
 import PostsScreen from './PostsScreen';
+import BlogsStack from '../routes/blogsStack';
 
 const Tab = createMaterialBottomTabNavigator();
 
 const AppTabs = () => {
     return (
         <Tab.Navigator screenOptions={({ route }) => ({
-            tabBarIcon: ({ focusedm, size, colour }) => {
+            tabBarIcon: ({ focusedm, size, colour = '#FF7C97' }) => {
                 let iconName;
                 if (route.name === 'Home') {
                     iconName = focusedm ? 'ios-home' : 'ios-home-outline';
@@ -30,7 +31,7 @@ const AppTabs = () => {
             }
         })}>
             <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Posts" component={PostsScreen} />
+            <Tab.Screen name="Posts" component={BlogsStack} />
             <Tab.Screen name="Falta" component={FaltaScreen} />
             <Tab.Screen name="Perfil" component={UsuariosScreen} />
         </Tab.Navigator>
