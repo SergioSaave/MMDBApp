@@ -1,9 +1,9 @@
 import React from "react";
 import PostList from "../components/PostList";
 
-const PostsScreen = () => {
+const PostsScreen = ({navigation}) => {
   return (
-    <PostList />
+    <PostList navigation={navigation}/>
   );
 };
 

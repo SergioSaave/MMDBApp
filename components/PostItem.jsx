@@ -1,19 +1,26 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
-const PostItem = ({ post }) => {
+const PostItem = ({ post, navigation }) => {
+
   const imageUrl = post.image_url;
 
   const resumenContent = post.content.split(" ").slice(0, 10).join(" ");
 
   return (
-    <View style={styles.card}>
+    <TouchableWithoutFeedback
+      style={styles.card}
+      onPress={() => {
+        navigation.navigate('PostOnly', { blog: post });
+      }}
+    >
       <Image source={{ uri: imageUrl }} style={styles.imagen} />
       <View>
         <Text style={styles.title}>{post.title}</Text>
         <Text style={styles.content}>{resumenContent + "..."}</Text>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 };
 
@@ -21,14 +28,15 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: "#fff",
     padding: 10,
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 20,
-    marginVertical: 8,
+    // marginLeft: 20,
+    // marginRight: 20,
+    // marginTop: 20,
+    // marginVertical: 8,
+    margin: 15,
     height: 130,
     borderRadius: 10,
     flexDirection: "row",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     alignItems: "center",
   },
   imagen: {
