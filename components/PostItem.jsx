@@ -28,11 +28,8 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: "#fff",
     padding: 10,
-    // marginLeft: 20,
-    // marginRight: 20,
-    // marginTop: 20,
-    // marginVertical: 8,
     margin: 15,
+    marginBottom: 0,
     height: 130,
     borderRadius: 10,
     flexDirection: "row",

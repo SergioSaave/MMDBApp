@@ -6,6 +6,7 @@ import AppTabs from './screens/AppTabs';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import HerramientasScreen from './screens/HerramientasScreen';
+import BlogsStack from './routes/blogsStack';
 
 
 const Drawer = createDrawerNavigator();
@@ -26,7 +27,7 @@ export default function App() {
               <MaterialIcons name='design-services' size={24} color="#000" />
             )
           }} />
-        <Drawer.Screen name="Blogs" component={HerramientasScreen}
+        <Drawer.Screen name="Blogs" component={BlogsStack}
           options={{
             drawerIcon: () => (
               <MaterialIcons name='dashboard' size={24} color="#000" />
