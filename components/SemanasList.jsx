@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   cardSemanaInfoTitulo: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: "400",
   },
   cardSemanaInfoDescripcion: {
     color: 'grey',
