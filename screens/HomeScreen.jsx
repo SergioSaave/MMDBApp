@@ -12,27 +12,31 @@ const HomeScreen = () => {
 
         <View style={styles.dias}>
           <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Mon</Text>
+            <Text style={{ color: "grey" }}>Lun</Text>
             <Text>16</Text>
           </View>
           <View style={styles.diasCardActual}>
-            <Text style={{ color: "white" }}>Mon</Text>
+            <Text style={{ color: "white" }}>Mar</Text>
             <Text style={{ color: "white" }}>17</Text>
           </View>
           <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Mon</Text>
+            <Text style={{ color: "grey" }}>Mie</Text>
+            <Text>21</Text>
+          </View>
+          <View style={styles.diasCard}>
+            <Text style={{ color: "grey" }}>Jue</Text>
             <Text>18</Text>
           </View>
           <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Mon</Text>
+            <Text style={{ color: "grey" }}>Vie</Text>
             <Text>19</Text>
           </View>
           <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Mon</Text>
+            <Text style={{ color: "grey" }}>Sab</Text>
             <Text>20</Text>
           </View>
           <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Mon</Text>
+            <Text style={{ color: "grey" }}>Dom</Text>
             <Text>21</Text>
           </View>
         </View>
@@ -127,8 +131,8 @@ const styles = StyleSheet.create({
   },
   dias: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    gap: 10,
+    justifyContent: "space-around",
+    gap: 5,
     marginTop: 10,
   },
   diasCard: {

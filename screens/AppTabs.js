@@ -7,6 +7,7 @@ import BlogsStack from '../routes/blogsStack';
 import UsuariosStack from '../routes/usuariosStack';
 import PaeStack from '../routes/paeStack';
 import PostsScreen from './PostsScreen';
+import SemanasStack from '../routes/semanasStack';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -17,6 +18,9 @@ const AppTabs = () => {
                 let iconName;
                 if (route.name === 'Home') {
                     iconName = focused ? 'ios-home' : 'ios-home-outline';
+                }
+                else if (route.name === 'Semanas') {
+                    iconName = focused ? 'calendar' : 'calendar-outline';
                 }
                 else if (route.name === 'Posts') {
                     iconName = focused ? 'ios-book' : 'ios-book-outline';
@@ -31,6 +35,7 @@ const AppTabs = () => {
             }
         })}>
             <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Semanas" component={SemanasStack} />
             <Tab.Screen name="Posts" component={PostsScreen} />
             <Tab.Screen name="PAE" component={PaeStack} />
             <Tab.Screen name="Perfil" component={UsuariosStack} />
