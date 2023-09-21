@@ -12,7 +12,6 @@ import { ScrollView } from "react-native-gesture-handler";
 
 const SemanaOnly = ({ navigation, route }) => {
   let semana = route.params.semana;
-  console.log(semana);
 
   const renderItem = ({ item }) => {
     return <SemanaItem semana={item} />;

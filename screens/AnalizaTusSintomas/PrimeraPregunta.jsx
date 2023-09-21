@@ -61,7 +61,6 @@ const PrimeraPregunta = ({ navigation }) => {
                   style={styles.imagen}
                 />
               </TouchableOpacity>
-              {console.log(pregunta)}
             </View>
           )}
         />

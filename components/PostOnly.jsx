@@ -11,8 +11,6 @@ import React from "react";
 const PostOnly = ({ navigation, route }) => {
   let blog = route.params.blog; //Para manejarlo mejor
 
-  console.log(blog)
-
   return (
     <View>
       <ScrollView style={styles.container}>
