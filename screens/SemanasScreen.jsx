@@ -4,9 +4,9 @@ import SemanasList from "../components/SemanasList";
 import SemanaOnly from "../components/SemanaOnly";
 import { semanas } from "../assets/semanas";
 
-const SemanasScreen = () => {
+const SemanasScreen = ({navigation}) => {
   const renderSemana = ({ item }) => {
-    return <SemanasList semana={item} />;
+    return <SemanasList navigation={navigation} semana={item} />;
   };
 
   return <FlatList data={semanas} renderItem={renderSemana} />;
