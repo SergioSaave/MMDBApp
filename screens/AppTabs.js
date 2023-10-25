@@ -1,17 +1,20 @@
-import React from 'react'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import Ionic from 'react-native-vector-icons/Ionicons'
-
 import HomeScreen from './HomeScreen'
-import BlogsStack from '../routes/blogsStack';
 import UsuariosStack from '../routes/usuariosStack';
 import PaeStack from '../routes/paeStack';
 import PostsScreen from './PostsScreen';
 import SemanasStack from '../routes/semanasStack';
+import PostsStack from '../routes/postsStack';
+import { useSelector } from 'react-redux';
+import PerfilScreen from './PerfilScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
 const AppTabs = () => {
+
+    const user = useSelector((state) => state.user);
+
     return (
         <Tab.Navigator screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, size, colour = '#EC407A' }) => {
@@ -36,9 +39,15 @@ const AppTabs = () => {
         })}>
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="Semanas" component={SemanasStack} />
-            <Tab.Screen name="Posts" component={PostsScreen} />
+            <Tab.Screen name="Posts" component={PostsStack} />
             <Tab.Screen name="PAE" component={PaeStack} />
-            <Tab.Screen name="Perfil" component={UsuariosStack} />
+            {
+                user.logeado === true ? (
+                    <Tab.Screen name="Perfil" component={PerfilScreen} />
+                ) : (
+                    <Tab.Screen name="Perfil" component={UsuariosStack} />
+                )
+            }
         </Tab.Navigator>
     )
 }

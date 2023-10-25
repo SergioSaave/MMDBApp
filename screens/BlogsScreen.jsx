@@ -1,9 +1,9 @@
 import React from "react";
-import PostList from "../components/PostList";
+import BlogList from "../components/Blogs/BlogList";
 
 const BlogsScreen = ({navigation}) => {
   return (
-    <PostList navigation={navigation}/>
+    <BlogList navigation={navigation}/>
   );
 };
 

@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import SemanaOnly from "../components/SemanaOnly";
+import SemanaOnly from "../components/Semana/SemanaOnly";
 import SemanasScreen from "../screens/SemanasScreen";
 
 const Stack = createStackNavigator();

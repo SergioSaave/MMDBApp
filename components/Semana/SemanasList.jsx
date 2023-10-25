@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useSelector } from "react-redux";
 
 const SemanaList = ({ navigation, semana }) => {
-
+  const user = useSelector((state) => state.user);
   const resumenContent = semana.descripcion.split(" ").slice(0, 20).join(" ");
 
   return (
@@ -22,14 +23,27 @@ const SemanaList = ({ navigation, semana }) => {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate("SemanaOnly", {
-                semana: semana,
-              });
+              semana: semana,
+            });
           }}
         >
           <View style={styles.cardSemana}>
             <View style={styles.cardSemanaSimbolo}>
-              <View style={styles.cardSemanaSimboloCirculoInactivated}></View>
-              <View style={styles.cardSemanaSimboloLineaInactivated}></View>
+              {semana.titulo.split(" ")[1] === user.semana.toString() ? (
+                <>
+                  <View
+                    style={styles.cardSemanaSimboloCirculoActivated}
+                  ></View>
+                  <View style={styles.cardSemanaSimboloLineaActivated}></View>
+                </>
+              ) : (
+                <>
+                  <View
+                    style={styles.cardSemanaSimboloCirculoInactivated}
+                  ></View>
+                  <View style={styles.cardSemanaSimboloLineaInactivated}></View>
+                </>
+              )}
             </View>
             <View style={styles.cardSemanaInfo}>
               <Text style={styles.cardSemanaInfoTitulo}>{semana.titulo}</Text>

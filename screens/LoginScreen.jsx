@@ -4,10 +4,43 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Button,
 } from "react-native";
-import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { login, logout } from "../store/slices/users/userSlice";
+import { useState } from "react";
 
 const LoginScreen = ({ navigation }) => {
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onEmailChange = (value) => {
+    setEmail(value);
+  };
+
+  const onPasswordChange = (value) => {
+    setPassword(value);
+  };
+
+  const onSubmitForm = () => {
+    dispatch(
+      login({
+        nombre: "Sergio",
+        apellido: "Saavedra",
+        edad: 20,
+        email,
+        password,
+        etapa: "embarazo",
+        semana: 16,
+        sexo: "hombre",
+        logeado: true,
+      })
+    );
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.subcontainer}>
@@ -25,18 +58,27 @@ const LoginScreen = ({ navigation }) => {
 
         <View style={styles.campos}>
           <Text style={{ fontWeight: "bold" }}>Correo:</Text>
-          <TextInput style={styles.input} placeholder="Ingresa tu correo" />
+          <TextInput
+            style={styles.input}
+            placeholder="Ingresa tu correo"
+            onChangeText={(value) => onEmailChange(value)}
+          />
         </View>
 
         <View style={styles.campos}>
           <Text style={{ fontWeight: "bold" }}>Contraseña:</Text>
-          <TextInput style={styles.input} placeholder="Ingresa tu contraseña" />
+          <TextInput
+            secureTextEntry={true}
+            style={styles.input}
+            placeholder="Ingresa tu contraseña"
+            onChangeText={(value) => onPasswordChange(value)}
+          />
         </View>
         <TouchableOpacity>
           <Text style={styles.forgotPassword}>Olvidaste tu contraseña ? </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.buttonSignIn}>
+        <TouchableOpacity style={styles.buttonSignIn} onPress={onSubmitForm}>
           <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 16 }}>
             Inicia Sesion
           </Text>

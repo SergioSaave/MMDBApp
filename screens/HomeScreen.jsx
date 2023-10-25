@@ -1,77 +1,34 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import StatsBebe from "../components/StatsBebe";
+import SemanaHome from "../components/SemanaHome";
+import PublicidadHome from "../components/PublicidadHome";
+import { useDispatch, useSelector } from "react-redux";
 
 const HomeScreen = () => {
+  const { nombre, semana, logeado } = useSelector((state) => state.user);
+
   return (
     <View style={styles.container}>
       <View style={styles.subcontainer}>
-        <Text style={{ marginTop: 10 }}>Hola Astrid!</Text>
-        <Text style={styles.title}>Semana 16 de embarazo</Text>
+        {logeado === true ? (
+          <Text style={{ marginTop: 10 }}>Hola {nombre}!</Text>
+        ) : (
+          <></>
+        )}
+        {logeado === true ? (
+          <Text style={styles.title}>Semana {semana} de embarazo</Text>
+        ) : (
+          <Text style={styles.titleJustify}>
+            Inicia sesion para poder ver informacion de tu bebe!
+          </Text>
+        )}
 
-        <View style={styles.dias}>
-          <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Lun</Text>
-            <Text>16</Text>
-          </View>
-          <View style={styles.diasCardActual}>
-            <Text style={{ color: "white" }}>Mar</Text>
-            <Text style={{ color: "white" }}>17</Text>
-          </View>
-          <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Mie</Text>
-            <Text>21</Text>
-          </View>
-          <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Jue</Text>
-            <Text>18</Text>
-          </View>
-          <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Vie</Text>
-            <Text>19</Text>
-          </View>
-          <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Sab</Text>
-            <Text>20</Text>
-          </View>
-          <View style={styles.diasCard}>
-            <Text style={{ color: "grey" }}>Dom</Text>
-            <Text>21</Text>
-          </View>
-        </View>
+        <SemanaHome />
 
-        <View style={styles.statsBebe}>
-          <View style={styles.statsTop}>
-            <Image
-              source={{
-                uri: "/Users/sergiosaavedra/workspace/MMDBApp/assets/maternal.png",
-              }}
-              style={styles.imagenBebe}
-            />
-            <Text style={styles.textTop}>
-              Tu bebe es del tamaño de una pera!
-            </Text>
-          </View>
-          <View style={styles.statsBot}>
-            <View style={styles.statsBotInfo}>
-              <Text style={{ color: "grey", fontSize: 12 }}>
-                Altura del bebe
-              </Text>
-              <Text>17 cm</Text>
-            </View>
-            <View>
-              <Text style={{ color: "grey", fontSize: 12 }}>Peso del bebe</Text>
-              <Text>110 gr</Text>
-            </View>
-            <View>
-              <Text style={{ color: "grey", fontSize: 12 }}>
-                Dias restantes
-              </Text>
-              <Text>168 dias</Text>
-            </View>
-          </View>
-        </View>
+        <StatsBebe />
 
         <View style={styles.atajoDoble}>
           <View style={styles.atajoIndividual}>
@@ -109,6 +66,8 @@ const HomeScreen = () => {
             <Text style={styles.textoAtajo}>Recetas</Text>
           </View>
         </View>
+
+        <PublicidadHome />
       </View>
     </View>
   );
@@ -129,65 +88,12 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginTop: 10,
   },
-  dias: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    gap: 5,
+  titleJustify: {
+    fontSize: 24,
+    fontWeight: "600",
     marginTop: 10,
-  },
-  diasCard: {
-    padding: 10,
-    backgroundColor: "#fff",
-    height: 70,
-    textAlign: "center",
-    alignItems: "center",
-    gap: 10,
-    borderRadius: 10,
-  },
-  diasCardActual: {
-    padding: 10,
-    backgroundColor: "#EC407A",
-    height: 70,
-    textAlign: "center",
-    alignItems: "center",
-    gap: 10,
-    borderRadius: 10,
-  },
-  statsBebe: {
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    width: "100%",
-    marginTop: 20,
-    marginBottom: 10,
-  },
-  statsTop: {
-    height: 80,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-  },
-  imagenBebe: {
-    width: "10%",
-    height: "40%",
-    backgroundColor: "#FFCDD2",
-    borderRadius: 100,
-    padding: 30,
-  },
-  textTop: {
-    textAlign: "center",
-    color: "grey",
-    fontSize: 13,
-  },
-  statsBot: {
-    height: 80,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-  },
-  statsBotInfo: {
-    flexDirection: "column",
-    justifyContent: "space-around",
-    alignItems: "left",
+    textAlign: "justify",
+    width: 300
   },
   atajoDoble: {
     flexDirection: "row",
@@ -210,9 +116,7 @@ const styles = StyleSheet.create({
   iconoAtajo: {
     alignItems: "center",
     padding: 10,
-  }
+  },
 });
 
 export default HomeScreen;
-
-// EC407A

@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 
-const PostOnly = ({ navigation, route }) => {
+const BlogOnly = ({ navigation, route }) => {
   let blog = route.params.blog; //Para manejarlo mejor
 
   return (
@@ -32,7 +32,7 @@ const PostOnly = ({ navigation, route }) => {
   );
 };
 
-export default PostOnly;
+export default BlogOnly;
 
 const styles = StyleSheet.create({
   container: {

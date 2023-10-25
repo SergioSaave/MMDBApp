@@ -2,22 +2,22 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
-const PostItem = ({ post, navigation }) => {
+const BlogItem = ({ blog, navigation }) => {
 
-  const imageUrl = post.image_url;
+  const imageUrl = blog.image_url;
 
-  const resumenContent = post.content.split(" ").slice(0, 10).join(" ");
+  const resumenContent = blog.content.split(" ").slice(0, 10).join(" ");
 
   return (
     <TouchableWithoutFeedback
       style={styles.card}
       onPress={() => {
-        navigation.navigate('PostOnly', { blog: post });
+        navigation.navigate('BlogOnly', { blog: blog });
       }}
     >
       <Image source={{ uri: imageUrl }} style={styles.imagen} />
       <View>
-        <Text style={styles.title}>{post.title}</Text>
+        <Text style={styles.title}>{blog.title}</Text>
         <Text style={styles.content}>{resumenContent + "..."}</Text>
       </View>
     </TouchableWithoutFeedback>
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PostItem;
+export default BlogItem;

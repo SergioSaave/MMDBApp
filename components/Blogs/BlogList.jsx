@@ -2,20 +2,20 @@ import { View, Text } from "react-native";
 import React from "react";
 import { StyleSheet } from "react-native";
 
-import { blogMamas } from "../assets/data"
+import { blogMamas } from "../../assets/data"
 import { FlatList } from "react-native-gesture-handler";
-import PostItem from "../components/PostItem";
+import BlogItem from "./BlogItem";
 
-const PostList = ({ navigation }) => {
+const BlogList = ({ navigation }) => {
   const renderItem = ({ item }) => {
-    return <PostItem post={item} navigation={navigation} />;
+    return <BlogItem blog={item} navigation={navigation} />;
   };
 
   return (
     <FlatList
       style={{ width: "100%" }}
       data={blogMamas}
-      keyExtractor={(posts) => posts.id.toString()}
+      keyExtractor={(blogs) => blogs.id.toString()}
       renderItem={renderItem}
     />
   );
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PostList;
+export default BlogList;

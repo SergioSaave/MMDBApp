@@ -1,7 +1,6 @@
-import { View, Text, FlatList } from "react-native";
+import { FlatList } from "react-native";
 import React from "react";
-import SemanasList from "../components/SemanasList";
-import SemanaOnly from "../components/SemanaOnly";
+import SemanasList from "../components/Semana/SemanasList";
 import { semanas } from "../assets/semanas";
 
 const SemanasScreen = ({navigation}) => {
