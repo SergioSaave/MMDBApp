@@ -7,7 +7,7 @@ import PostsScreen from './PostsScreen';
 import SemanasStack from '../routes/semanasStack';
 import PostsStack from '../routes/postsStack';
 import { useSelector } from 'react-redux';
-import PerfilScreen from './PerfilScreen';
+import PerfilScreen from './Perfil/PerfilScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 

@@ -11,8 +11,6 @@ import { ScrollView } from "react-native-gesture-handler";
 const PostOnly = ({ navigation, route }) => {
   let post = route.params.post;
 
-  console.log(post)
-
   return (
     <ScrollView>
       <View style={styles.container}>

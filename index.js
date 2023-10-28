@@ -5,9 +5,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import AppTabs from './screens/AppTabs';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import HerramientasScreen from './screens/HerramientasScreen';
+import HerramientasScreen from './screens/Herramientas/HerramientasScreen';
 import BlogsStack from './routes/blogsStack';
 import QuienesSomosScreen from './screens/QuienesSomosScreen';
+import HerramientasStack from './routes/herramientasStack';
 
 const Drawer = createDrawerNavigator();
 
@@ -21,7 +22,7 @@ const Index = () => {
                             <MaterialIcons name='child-friendly' size={24} color="#000" />
                         )
                     }} />
-                <Drawer.Screen name="Herramientas" component={HerramientasScreen}
+                <Drawer.Screen name="Herramientas" component={HerramientasStack}
                     options={{
                         drawerIcon: () => (
                             <MaterialIcons name='design-services' size={24} color="#000" />

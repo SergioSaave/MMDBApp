@@ -1,13 +1,14 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 import React from "react";
 
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import StatsBebe from "../components/StatsBebe";
 import SemanaHome from "../components/SemanaHome";
 import PublicidadHome from "../components/PublicidadHome";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import MyCarousel from "../components/Carousel/MyCarousel";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const { nombre, semana, logeado } = useSelector((state) => state.user);
 
   return (
@@ -21,14 +22,18 @@ const HomeScreen = () => {
         {logeado === true ? (
           <Text style={styles.title}>Semana {semana} de embarazo</Text>
         ) : (
-          <Text style={styles.titleJustify}>
-            Inicia sesion para poder ver informacion de tu bebe!
-          </Text>
+          <Button
+            title="Presiona aqui para acceder a tu cuenta!"
+            style={styles.titleJustify}
+            onPress={() => {
+              navigation.navigate("Perfil");
+            }}
+          />
         )}
 
         <SemanaHome />
-
         <StatsBebe />
+        {/* <MyCarousel /> */}
 
         <View style={styles.atajoDoble}>
           <View style={styles.atajoIndividual}>
@@ -89,11 +94,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   titleJustify: {
-    fontSize: 24,
+    fontSize: 16,
     fontWeight: "600",
     marginTop: 10,
-    textAlign: "justify",
-    width: 300
+    textAlign: "center",
+    width: "100%",
   },
   atajoDoble: {
     flexDirection: "row",

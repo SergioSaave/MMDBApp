@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const HerramientasScreen = () => {
+const PersonalizarUsuario = () => {
   return (
     <View>
-      <Text>HerramientasScreen</Text>
+      <Text>PersonalizarUsuario</Text>
     </View>
   )
 }
 
-export default HerramientasScreen
+export default PersonalizarUsuario

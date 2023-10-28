@@ -16,7 +16,7 @@ const StatsBebe = () => {
         />
         {
           logeado === true ? (
-            <Text style={styles.textTop}>Tu bebe es del tamaño de una pera!</Text>
+            <Text style={styles.textTop}>Le quedan {43 - semana} semanas a tu bebe!</Text>
           ) : (
             <Text style={styles.textTop}>De que tamaño será tu bebe ?</Text>
           )

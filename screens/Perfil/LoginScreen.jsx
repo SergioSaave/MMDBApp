@@ -7,7 +7,7 @@ import {
   Button,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { login, logout } from "../store/slices/users/userSlice";
+import { login } from "../../store/slices/users/userSlice";
 import { useState } from "react";
 
 const LoginScreen = ({ navigation }) => {
@@ -29,13 +29,10 @@ const LoginScreen = ({ navigation }) => {
     dispatch(
       login({
         nombre: "Sergio",
-        apellido: "Saavedra",
-        edad: 20,
         email,
         password,
         etapa: "embarazo",
         semana: 16,
-        sexo: "hombre",
         logeado: true,
       })
     );

@@ -5,6 +5,7 @@ import SemanasScreen from "../screens/SemanasScreen";
 const Stack = createStackNavigator();
 
 export default function SemanasStack() {
+
     return (
         <Stack.Navigator>
             <Stack.Screen name="SemanasScreen" component={SemanasScreen} options={{ headerShown: false }} />

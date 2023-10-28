@@ -19,78 +19,78 @@ const SemanaHome = () => {
     <View style={styles.dias}>
       {getDate(currentDate) == daysInWeek[0] ? (
         <View style={styles.diasCardActual}>
-          <Text style={{ color: "white" }}>Lun</Text>
+          <Text style={{ color: "white", fontSize: 10 }}>Lun</Text>
           <Text style={{ color: "white" }}>{daysInWeek[0]}</Text>
         </View>
       ) : (
         <View style={styles.diasCard}>
-          <Text style={{ color: "grey" }}>Lun</Text>
+          <Text style={{ color: "grey", fontSize: 10 }}>Lun</Text>
           <Text>{daysInWeek[0]}</Text>
         </View>
       )}
       {getDate(currentDate) == daysInWeek[1] ? (
         <View style={styles.diasCardActual}>
-          <Text style={{ color: "white" }}>Mar</Text>
+          <Text style={{ color: "white", fontSize: 10 }}>Mar</Text>
           <Text style={{ color: "white" }}>{daysInWeek[1]}</Text>
         </View>
       ) : (
         <View style={styles.diasCard}>
-          <Text style={{ color: "grey" }}>Mar</Text>
+          <Text style={{ color: "grey", fontSize: 10 }}>Mar</Text>
           <Text>{daysInWeek[1]}</Text>
         </View>
       )}
       {getDate(currentDate) == daysInWeek[2] ? (
         <View style={styles.diasCardActual}>
-          <Text style={{ color: "white" }}>Mie</Text>
+          <Text style={{ color: "white", fontSize: 10 }}>Mie</Text>
           <Text style={{ color: "white" }}>{daysInWeek[2]}</Text>
         </View>
       ) : (
         <View style={styles.diasCard}>
-          <Text style={{ color: "grey" }}>Mie</Text>
+          <Text style={{ color: "grey", fontSize: 10 }}>Mie</Text>
           <Text>{daysInWeek[2]}</Text>
         </View>
       )}
       {getDate(currentDate) == daysInWeek[3] ? (
         <View style={styles.diasCardActual}>
-          <Text style={{ color: "white" }}>Jue</Text>
+          <Text style={{ color: "white", fontSize: 10 }}>Jue</Text>
           <Text style={{ color: "white" }}>{daysInWeek[3]}</Text>
         </View>
       ) : (
         <View style={styles.diasCard}>
-          <Text style={{ color: "grey" }}>Jue</Text>
+          <Text style={{ color: "grey", fontSize: 10 }}>Jue</Text>
           <Text>{daysInWeek[3]}</Text>
         </View>
       )}
       {getDate(currentDate) == daysInWeek[4] ? (
         <View style={styles.diasCardActual}>
-          <Text style={{ color: "white" }}>Vie</Text>
+          <Text style={{ color: "white", fontSize: 10 }}>Vie</Text>
           <Text style={{ color: "white" }}>{daysInWeek[4]}</Text>
         </View>
       ) : (
         <View style={styles.diasCard}>
-          <Text style={{ color: "grey" }}>Vie</Text>
+          <Text style={{ color: "grey", fontSize: 10 }}>Vie</Text>
           <Text>{daysInWeek[4]}</Text>
         </View>
       )}
       {getDate(currentDate) == daysInWeek[5] ? (
         <View style={styles.diasCardActual}>
-          <Text style={{ color: "white" }}>Sab</Text>
+          <Text style={{ color: "white", fontSize: 10 }}>Sab</Text>
           <Text style={{ color: "white" }}>{daysInWeek[5]}</Text>
         </View>
       ) : (
         <View style={styles.diasCard}>
-          <Text style={{ color: "grey" }}>Sab</Text>
+          <Text style={{ color: "grey", fontSize: 10 }}>Sab</Text>
           <Text>{daysInWeek[5]}</Text>
         </View>
       )}
       {getDate(currentDate) == daysInWeek[6] ? (
         <View style={styles.diasCardActual}>
-          <Text style={{ color: "white" }}>Dom</Text>
+          <Text style={{ color: "white", fontSize: 10 }}>Dom</Text>
           <Text style={{ color: "white" }}>{daysInWeek[6]}</Text>
         </View>
       ) : (
         <View style={styles.diasCard}>
-          <Text style={{ color: "grey" }}>Dom</Text>
+          <Text style={{ color: "grey", fontSize: 10 }}>Dom</Text>
           <Text>{daysInWeek[6]}</Text>
         </View>
       )}
