@@ -64,15 +64,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#FAFAFA",
   },
   subcontainer: {
-    marginLeft: 40,
-    marginRight: 40,
+    marginLeft: 20,
+    marginRight: 20,
     marginBottom: 20,
   },
   cardSemana: {
     marginTop: 20,
     flexDirection: "row",
     justifyContent: "space-around",
-    gap: 60,
+    gap: 10,
   },
   cardSemanaSimbolo: {
     width: 50,

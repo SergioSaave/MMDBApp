@@ -7,8 +7,8 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useState } from "react";
-import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
-import RNPickerSelect from "react-native-picker-select";
+// import BouncyCheckboxGroup from "react-native-bouncy-checkbox-group";
+// import RNPickerSelect from "react-native-picker-select";
 import { semanas } from "../../assets/semanasRegister";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/slices/users/userSlice";
@@ -91,7 +91,7 @@ const RegisterScreen = ({ navigation }) => {
 
         <View style={styles.campos}>
           <Text>Semana:</Text>
-          <RNPickerSelect
+          {/* <RNPickerSelect
             onValueChange={(value) => onSemanaChange(value)}
             items={semanas}
             placeholder={{
@@ -99,17 +99,17 @@ const RegisterScreen = ({ navigation }) => {
               value: null,
             }}
             style={pickerSelectStyles}
-          />
+          /> */}
         </View>
 
         <View style={styles.campos}>
           <Text>Etapa:</Text>
 
-          <BouncyCheckboxGroup
+          {/* <BouncyCheckboxGroup
             data={verticalData}
             style={{ flexDirection: "row", gap: 30 }}
             onChange={(selectedItem) => onEtapaChange(selectedItem)}
-          />
+          /> */}
         </View>
 
         <TouchableOpacity style={styles.buttonSignIn} onPress={onSubmitForm}>

@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
 import React from "react";
 
 const HerramientasScreen = ({ navigation }) => {
@@ -6,14 +13,54 @@ const HerramientasScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.subcontainer}>
         <Text style={styles.title}>Herramientas</Text>
+        <Text style={styles.content}>
+          A continuación puedes elegir entre alguna de las herramientas de Mi
+          Manual del Bebe
+        </Text>
         <TouchableOpacity
-          style={styles.button}
+          style={styles.buttonEmbarazo}
           onPress={() => {
             navigation.navigate("CalculadoraEmbarazoScreen");
           }}
         >
           <Text style={{ color: "white", fontSize: 16 }}>
-            Calculadora de embarazo
+            Calculadora de Embarazo
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonOvulacion}
+          onPress={() => {
+            navigation.navigate("CalculadoraOvulacionScreen");
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 16 }}>
+            Calculadora de Ovulacion
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.buttonLibroChile}
+          onPress={() =>
+            Linking.openURL(
+              "https://mimanualdelbebe.com/libro-digital-chile/cuarta-edicion/"
+            )
+          }
+        >
+          <Text style={{ color: "white", fontSize: 16 }}>
+            Libro virtual Chile
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.buttonLibroColombia}
+          onPress={() =>
+            Linking.openURL(
+              "https://mimanualdelbebe.com/libro-digital-colombia/decimocuarta-edicion/"
+            )
+          }
+        >
+          <Text style={{ color: "white", fontSize: 16 }}>
+            Libro virtual Colombia
           </Text>
         </TouchableOpacity>
       </View>
@@ -34,13 +81,50 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "600",
-    marginTop: 10,
+    marginTop: 20,
   },
-  button: {
+  content: {
+    fontSize: 14,
+    marginTop: 20,
+    textAlign: "justify",
+    marginBottom: 20,
+  },
+  buttonEmbarazo: {
     padding: 15,
     marginLeft: "auto",
     marginRight: "auto",
+    marginBottom: 10,
     backgroundColor: "#F687B3",
+    borderRadius: 10,
+    width: "100%",
+    alignItems: "center",
+  },
+  buttonOvulacion: {
+    padding: 15,
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginBottom: 10,
+    backgroundColor: "#CC99FF",
+    borderRadius: 10,
+    width: "100%",
+    alignItems: "center",
+  },
+  buttonLibroChile: {
+    padding: 15,
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginBottom: 10,
+    backgroundColor: "#FF6666",
+    borderRadius: 10,
+    width: "100%",
+    alignItems: "center",
+  },
+  buttonLibroColombia: {
+    padding: 15,
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginBottom: 10,
+    backgroundColor: "#FF9933",
     borderRadius: 10,
     width: "100%",
     alignItems: "center",

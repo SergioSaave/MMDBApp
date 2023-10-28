@@ -1,5 +1,4 @@
 export const getSemanasEmbarazo = (date) => {
-    console.log(date)
     const fechaActual = new Date();
 
     // Convierte la fecha proporcionada a un objeto de fecha
@@ -14,8 +13,6 @@ export const getSemanasEmbarazo = (date) => {
     
     // Convierte la diferencia en milisegundos a días
     var diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
-    
-    console.log("Diferencia en días: " + diferenciaEnDias);  
     const semanas = Math.floor(diferenciaEnDias / 7).toString();
     const dias = (diferenciaEnDias % 7).toString()
     return {
